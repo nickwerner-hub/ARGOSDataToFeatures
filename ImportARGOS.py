@@ -16,6 +16,12 @@ import sys, os, arcpy
 # Set input variables (Hard-wired)
 inputFile = '../Data/ARGOSData/1997dg.txt'
 outputFC = '../Scratch/ARGOStrack.shp'
+outputSR = arcpy.SpatialReference(54002)
+
+## Prepare a new feature class to which we'll add tracking points
+# Create an empty feature class; requires the path and name as separate parameters
+outPath,outName = os.path.split(outputFC)
+arcpy.CreateFeatureclass_management(outPath, outName)
 
 ## Construct a while loop to iterate through all lines in the datafile
 # Open the ARGOS data file for reading

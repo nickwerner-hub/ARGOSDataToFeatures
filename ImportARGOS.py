@@ -72,11 +72,11 @@ while lineString:
             if obsLat[-1] == 'N':
                 obsLat = float(obsLat[:-1])
             else:
-                obsLat = float(obsLat[:-1] * -1)
-            if obsLon[-1] == 'W':
+                obsLat = float(obsLat[:-1]) * -1
+            if obsLon[-1] == 'E':
                 obsLon = float(obsLon[:-1])
             else:
-                obsLon = float(obsLon[:-1] * -1)
+                obsLon = float(obsLon[:-1]) * -1
                
             # Construct a point object from the feature class
             obsPoint = arcpy.Point()
